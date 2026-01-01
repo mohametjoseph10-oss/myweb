@@ -1,0 +1,48 @@
+/* Protocol Warning Box */
+.protocol-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.protocol-warning h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: #856404;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.protocol-warning p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.solution-guide {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px dashed #d39e00;
+}
+
+.solution-guide strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.solution-guide ol {
+    margin-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+.solution-guide li {
+    margin-bottom: 0.3rem;
+}
