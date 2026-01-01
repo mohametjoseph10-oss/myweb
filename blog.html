@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Mohamet Joseph</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Read tutorials, tech articles, and updates from Mohamet Joseph.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Mohamet.Article</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#portfolio">Projects</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="theme-wrapper">
+            <div class="theme-toggle" id="theme-btn">
+                <i class="fas fa-circle-half-stroke"></i>
+            </div>
+            <ul class="theme-menu" id="theme-menu">
+                <li data-theme="light" class="active"><i class="fas fa-sun"></i> Light</li>
+                <li data-theme="dark"><i class="fas fa-moon"></i> Dark</li>
+                <li data-theme="system"><i class="fas fa-laptop"></i> System</li>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="hero" style="min-height: 40vh; padding-top: 120px;">
+        <div class="hero-content">
+            <h1 class="name">Blog & Tutorials</h1>
+            <p class="tagline" style="font-size: 1.5rem;">Insights on Web Dev, Design, and Tech.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+
+            <!-- Filter & Search -->
+            <div class="filter-bar">
+                <div class="category-filters" id="category-filters">
+                    <button class="active" data-category="all">All</button>
+                    <button data-category="tech">Tech</button>
+                    <button data-category="tutorial">Tutorials</button>
+                    <button data-category="personal">Personal</button>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search articles...">
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div id="blog-grid" class="blog-grid">
+                <!-- Posts will be loaded here via JS -->
+                <div class="loading-spinner" style="text-align: center; grid-column: 1/-1;">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                </div>
+            </div>
+
+            <div id="load-more-container" style="text-align: center; margin-top: 3rem; display: none;">
+                <button id="load-more-btn" class="btn secondary">Load More</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mohamet Joseph. Built with <i class="fas fa-heart"></i> in Somalia.</p>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <!-- Config -->
+    <script src="js/firebase-config.js"></script>
+
+    <!-- App JS (for Theme/Nav) -->
+    <script src="js/app.js"></script>
+
+    <!-- Blog Logic -->
+    <script src="js/blog.js"></script>
+</body>
+
+</html>

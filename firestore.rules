@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // STRICT SECURITY RULES
+    // Only the admin (mohametjoseph10@gmail.com) can edit posts or view contacts.
+    // Everyone can read posts.
+    
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "mohametjoseph10@gmail.com";
+    }
+
+    match /posts/{postId}/comments/{commentId} {
+        allow read: if true;
+        allow create: if true; // Allow public comments if that feature is added
+        allow update, delete: if request.auth != null && request.auth.token.email == "mohametjoseph10@gmail.com";
+    }
+    
+    match /contacts/{contactId} {
+      allow create: if true; // Public can submit contact form
+      allow read, write: if request.auth != null && request.auth.token.email == "mohametjoseph10@gmail.com";
+    }
+
+    // Default deny for anything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

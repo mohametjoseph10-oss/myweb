@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Mohamet Joseph</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/warning.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <ul class="nav-links">
+            <li><a href="blog.html">View Blog</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="admin-container">
+
+        <!-- Login View -->
+        <div id="login-view" style="max-width: 450px; margin: 4rem auto; text-align: center;">
+            <h2>Admin Login</h2>
+
+            <!-- Protocol Warning (Hidden by default) -->
+            <div id="protocol-warning" class="protocol-warning" style="display: none;">
+                <h3><i class="fas fa-exclamation-triangle"></i> Protocol Error</h3>
+                <p>Google/Social Login requires this site to be running on a <strong>Local Server</strong> (e.g.
+                    http://localhost), not opened directly as a file.</p>
+
+                <div class="solution-guide">
+                    <strong><i class="fas fa-lightbulb"></i> Solution:</strong>
+                    <ol>
+                        <li>Install <b>"Live Server"</b> extension in VS Code.</li>
+                        <li>Right-click inside <b>admin.html</b>.</li>
+                        <li>Select <b>"Open with Live Server"</b>.</li>
+                    </ol>
+                </div>
+            </div>
+            <form id="login-form" class="contact-form" style="margin-top: 2rem;">
+                <div class="form-group">
+                    <input type="text" id="admin-email" placeholder="Email or Username" required>
+                </div>
+                <div class="form-group password-wrapper">
+                    <input type="password" id="admin-password" placeholder="Password" required>
+                    <i class="fas fa-eye" id="toggle-password"></i>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me"> Remember me
+                    </label>
+                    <span class="forgot-password" id="forgot-password-link">Forgot password?</span>
+                </div>
+
+                <button type="submit" class="btn primary">Login</button>
+                <p id="login-error" style="color: red; margin-top: 1rem; font-size: 0.9rem;"></p>
+
+                <div class="login-divider">OR</div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google" id="google-login">
+                        <i class="fab fa-google"></i> Login with Google
+                    </button>
+                    <button type="button" class="social-btn github" id="github-login">
+                        <i class="fab fa-github"></i> Login with GitHub
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Dashboard View -->
+        <div id="dashboard-view" style="display: none;">
+            <div class="admin-header">
+                <h2>Manage Posts</h2>
+                <button id="create-post-btn" class="btn primary"><i class="fas fa-plus"></i> New Post</button>
+            </div>
+
+            <!-- Post Editor (Modal or inline) -->
+            <div id="editor-view" class="post-editor" style="display: none; margin-bottom: 3rem;">
+                <h3>Edit Post</h3>
+                <input type="hidden" id="post-id">
+                <input type="text" id="post-title" class="editor-input" placeholder="Post Title" required>
+                <input type="text" id="post-excerpt" class="editor-input" placeholder="Short Excerpt" required>
+                <select id="post-category" class="editor-input">
+                    <option value="tech">Tech</option>
+                    <option value="tutorial">Tutorial</option>
+                    <option value="personal">Personal</option>
+                </select>
+                <input type="file" id="post-image" class="editor-input" accept="image/*">
+                <div id="image-preview" style="max-height: 200px; overflow: hidden;"></div>
+
+                <!-- Simple Text Area for now, could be Rich Text later -->
+                <textarea id="post-content" class="editor-input"
+                    placeholder="Content (HTML or Markdown supported if implemented)..."
+                    style="min-height: 300px;"></textarea>
+
+                <div style="display: flex; gap: 1rem;">
+                    <button id="save-post-btn" class="btn primary">Save & Publish</button>
+                    <button id="cancel-edit-btn" class="btn secondary">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Post List -->
+            <div id="admin-post-list" class="blog-grid">
+                <!-- Admin posts load here -->
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

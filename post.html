@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post | Mohamet Joseph</title>
+
+    <!-- SEO Meta Tags will be populated by JS ideally, but static for now -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Monospace for code -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"><a href="blog.html">Mohamet.Article</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <div class="theme-wrapper">
+            <div class="theme-toggle" id="theme-btn">
+                <i class="fas fa-circle-half-stroke"></i>
+            </div>
+            <ul class="theme-menu" id="theme-menu">
+                <li data-theme="light" class="active"><i class="fas fa-sun"></i> Light</li>
+                <li data-theme="dark"><i class="fas fa-moon"></i> Dark</li>
+                <li data-theme="system"><i class="fas fa-laptop"></i> System</li>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Post Content -->
+    <section class="blog-section" style="padding-top: 120px;">
+        <article class="container post-container" id="post-content">
+            <div class="loading-spinner" style="text-align: center;">
+                <i class="fas fa-spinner fa-spin fa-2x"></i> Loading Post...
+            </div>
+        </article>
+
+        <!-- Comments -->
+        <div class="container post-container comments-section">
+            <h3>Comments</h3>
+            <div id="comments-list">
+                <!-- Comments will load here -->
+            </div>
+
+            <form id="comment-form" class="comment-form" style="margin-top: 2rem;">
+                <h4>Leave a comment</h4>
+                <div class="form-group">
+                    <input type="text" id="comment-name" placeholder="Your Name" required
+                        style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border-radius: 8px; border: 1px solid #ccc;">
+                </div>
+                <div class="form-group">
+                    <textarea id="comment-text" rows="3" placeholder="Join the discussion..." required></textarea>
+                </div>
+                <button type="submit" class="btn primary">Post Comment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mohamet Joseph.</p>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <!-- Config -->
+    <script src="js/firebase-config.js"></script>
+
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+
+    <!-- Post JS -->
+    <script src="js/post.js"></script>
+</body>
+
+</html>
